@@ -24,3 +24,25 @@ Account inside the function is: sjtom
 Name inside function: Alex
 >>> f"Name outside of the function: {name}"
 'Name outside of the function: Sara'
+>>> # Don't do this! 
+>>> # Source of bugs.
+>>> def foo(a, b =[]):
+...     b.append(a)
+...     print(b)
+... 
+>>> foo(1)
+[1]
+>>> foo(5)
+[1, 5]
+>>> # Do this instead
+>>> def foo(a, b=None):
+...     if b is None:
+...             b = []
+...     b.append(a)
+...     print(b)
+... 
+>>> foo(1)
+[1]
+>>> foo(5)
+[5]
+>>>
