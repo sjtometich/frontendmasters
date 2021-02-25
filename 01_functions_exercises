@@ -1,0 +1,51 @@
+>>> def add_numbers(x, y):
+...     return x + y
+... 
+>>> add_numbers(1,2)
+3   
+>>> a = 1
+>>> b = 1
+>>> add_numbers(a, b)
+2   
+>>> x = 1
+>>> y = 2
+>>> def add_numbers(x,y):
+...     print(f"Inside the function, x: {x}, y: {y}")
+...     return x + y
+... 
+>>> f"Outisde of the function, x: {x}, y:{y}"
+'Outisde of the function, x: 1, y:2'
+>>> add_numbers(4,5)
+Inside the function, x: 4, y: 5
+9
+>>> x
+1
+>>> y
+2
+>>> def numbers():
+...     x = 0 
+...     y = -1
+...     print(f"Inside the function, x:{x}, y:{y}")
+... 
+>>> numbers()
+Inside the function, x:0, y:-1
+>>> f"Outside of the function, x:{x}, y:{y}"
+'Outside of the function, x:1, y:2'
+>>>
+>>> def calculate_numbers(x, y, operation="add"):
+...     if operation == "add":
+...             return x + y
+...     if operation == "subtract":
+...             return x - y  
+... 
+>>> calculate_numbers(4,5)
+9
+>>> calculate_numbers(4, 5, operation="subtract")
+-1
+>>> calculate_numbers(y=3, x=2)
+5
+>>>
+>>> # == means equality and this is used to compare values 
+>>> 
+>>> # is, do they point to the same thing in memory? You will use this when comparing to built-in python types (i.e. None, False, True, etc.)
+>>>   
