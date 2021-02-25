@@ -1,0 +1,14 @@
+# Python Fundamentals
+
+I am in the process of completing a Frontend Masters course on Python fundamentals with Nina Zakharenko using VS code. These are the topics being covered during the course:
+  - Data Types
+  - Functions
+  - Lists
+  - Tuples
+  - Sets
+  - Dictionaries
+  - Boolean Logic
+  - Looping & Control Flow
+  - Real World
+
+Starting with 'Functions' above, I have created separate files that show the work I did to follow along with the course, as well as the exercises done at the end of each topic. Please let me know if you have any questions on the material included.
