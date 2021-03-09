@@ -1,0 +1,47 @@
+>>> my_list = ["h", "e", "l", "l", "o"]
+>>> # Let's look at our list:
+>>> my_list
+>>> # Let's add to my_list:
+>>> my_list.append("!")
+>>> # Now let's see it again:
+>>> my_list
+['h', 'e', 'l', 'l', 'o', '!']
+>>> len(my_list)
+6
+>>> # So the last two indexes are 4 and 5. Since the first number in the slice is inclusive, and the second number isive, and the second number is exclusive, we can ask for everything betwen index 4 and 6 
+>>> my_list[4:6]
+['o', '!']
+>>> # We can also say "Give me everything after index 4"
+>>> my_list[4:]
+['o', '!']
+>>> # Or, we can ask for just the last two items without caring how big the list is. This means "give me everything starting from two before the end":
+>>> my_list[-2:]
+['o', '!']
+>>> # Remove the first L:
+>>> my_list.remove("l")
+>>> # Let's put it back at index 2
+>>> my_list.insert(2, "l")
+>>> # Delete any element
+>>> del my_list[0]
+>>> # Remove and rerun the last element. Useful for queues!
+>>> last_itm = my_list.pop()
+>>> last_item = my_list.pop()
+>>> last_item
+'o'
+>>> # We can also look at individual items by using an index:
+>>> my_list[2]
+'l' 
+>>> # Or we can see if a certain value exists in the list:
+>>> "!" in my_list
+False
+>>> # Let's sort our list in reverse order
+>>> my_list.sort(reverse=True)
+>>> my_list
+['l', 'l', 'e']
+>>> # Note that sort() doesn't return anything. It sorts the list in-place                                                                                
+>>> # You can also use the sorted() function to return a new, sorted list without modifying the old one
+>>> sorted(my_list, reverse=False)
+['e', 'l', 'l']
+>>> my_list
+['l', 'l', 'e']
+>>>
