@@ -1,3 +1,4 @@
+#######################################################################
 Type: List
 # Use:
   Used for storing similar items, and in case where items need to be added or removed
@@ -17,8 +18,7 @@ Type: List
   Yes - my_list.sort() or my_list.reverse() will sort the list in-place
 
 
-
->>> # lists
+>>> # Lists
 >>> []
 []
 >>> list()
@@ -181,3 +181,83 @@ ValueError: list.remove(x): x not in list
 >>> len(names)
 2
 >>>
+
+#######################################################################
+
+Type: Tuple
+# Use:
+  Used for storing a snapshot of realted items when we don't plan on modifying, adding, or removing data
+# Creation
+  () or tuple() for empty tuple, (1, ) for one item, or (1,2,3) for a tuple with items
+# Search Methods
+  my_tuple.index(item) or item in my_tuple
+# Search Speed
+  Searching for an item in a large list is slow. Each item must be checked
+# Common Methods
+  Can't add or remove from tuples
+# Order preserved?
+  Yes - items can be accessed by index
+# Mutable?
+  No
+# In-place sortable?
+  No
+ 
+
+ >>> # Tuples
+>>> a =()
+>>> type(a)
+<class 'tuple'>
+>>> b = (1)
+>>> type(b)
+<class 'int'>
+>>> c = (1,)
+>>> type(c)
+<class 'tuple'>
+>>> # (,) is a syntax error in python
+>>> (1,2,3,4,5)
+(1, 2, 3, 4, 5)
+>>> student = ("Marcy", 8, "History", 3.5)
+>>> student[0]
+'Marcy'
+>>> student[1]
+8   
+>>> student[0] = "Sara"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> student
+('Marcy', 8, 'History', 3.5)
+>>> name, age, subject, gpa = student
+>>> name
+'Marcy'
+>>> age
+8   
+>>> subject
+'History'
+>>> gpa  
+3.5 
+>>> # if this was a row in a spreadsheet, we could access the values quickly and easily
+>>> foo, bar, baz = student
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: too many values to unpack (expected 3)
+>>> name, age, subject, _ = student
+>>> # underscore means throwaway this value, I don't care about it
+>>> x = 1,2,3
+>>> type(x)
+<class 'tuple'>
+>>> def http_status_code():
+...     return 200, "OK"
+... 
+>>> http_status_code()
+(200, 'OK')
+>>> code, name = http_status_code()
+>>> code
+200
+>>> name
+'OK'
+>>>
+
+#######################################################################
+
+
