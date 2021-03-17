@@ -260,4 +260,22 @@ ValueError: too many values to unpack (expected 3)
 
 #######################################################################
 
+Type: Sets
+# Use:
+  Used for storing immutable data types uniquely. Easy to compare the items in sets
+# Creation
+  set() for an empty set ({} makes an empty dictionary) and {1,2,3} for a set with items in it
+# Search Methods
+  item in my_set
+# Search Speed
+  Searching for an item in a large set is very fast
+# Common Methods
+  my_set.add(item), my_set.discard(item) to remove the item if it's present, my_set.update(other_set)
+# Order preserved?
+  No - items can't be accessed by index
+# Mutable?
+  Yes - you can add to or remove from sets
+# In-place sortable?
+  No because items aren't ordered
+  
 
