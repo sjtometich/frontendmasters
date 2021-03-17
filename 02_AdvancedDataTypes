@@ -279,3 +279,90 @@ Type: Sets
   No because items aren't ordered
   
 
+>>> # Sets
+>>> type({})
+<class 'dict'>
+>>> set()
+set()
+>>> {1}
+{1} 
+>>> type({1})
+<class 'set'>
+>>> names = {"Sara", "Max", "Sara"}
+>>> names
+{'Sara', 'Max'}
+>>> # since lists don't store duplicate values, the duplicate value gets ignored
+>>> len(names)
+2   
+>>> # Lets' check for some hashes
+>>> hash("Sara")
+1946758148
+>>> hash([])
+Traceback (most recent call last):   
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'   
+>>> {[]}
+Traceback (most recent call last):   
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'   
+>>> # You can only put immutable items in the set
+>>> names = ["Sara", "Shane", "Alex", "Alex", "Sara"]
+>>> set(names)
+{'Alex', 'Sara', 'Shane'}
+>>> # By passing a list into a set function, you can return a set of unique values. The items in the list are case sensitive
+>>> my_set = {1, "a", 2, "b", "cat"} 
+>>> my_set
+{1, 2, 'cat', 'a', 'b'}
+>>> my_set[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'set' object is not subscriptable
+>>> # Adding and removing from sets
+>>> colors = {"Red", "Green", "Blue"}
+>>> colors.add("Pink")
+>>> colors
+{'Blue', 'Red', 'Green', 'Pink'}
+>>> colors.discard("Green")
+>>> colors
+{'Blue', 'Red', 'Pink'}
+>>> colors.discard("Zebra")
+>>> # If you try to discard an item that isn't in the set, you won't get an error and sometimes that can be useful
+>>> colors.remove("Pink")
+>>> colors
+{'Blue', 'Red'}
+>>> colors.remove("Pink")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'Pink'
+>>> colors
+{'Blue', 'Red'}
+>>> numbers = {1,4,5}
+>>> colors.update(numbers)
+>>> colors
+{'Blue', 1, 'Red', 4, 5}
+>>> colors.update("Sara")
+>>> colors
+{'Blue', 1, 'Red', 4, 5, 'a', 'S', 'r'}
+>>> # The update function expects a sequence and if you pass in a string it will look for a sequence under the hood
+>>> # Set Operations
+>>> colors = {"Red", "Green", "Blue"}
+>>> "Blue" in colors
+True
+>>> "Orange" in colors
+False
+>>> rainbow_colors = {"Red", "Orange", "Yellow", "Green", "Blue", "Violet"}
+>>> favorite_colors = {"Blue", "Purple", "Gray"}
+>>> rainbow_colors
+{'Red', 'Green', 'Violet', 'Blue', 'Orange', 'Yellow'}
+>>> favorite_colors
+{'Blue', 'Gray', 'Purple'}
+>>> # my_set.union(other_set) OR my_set | other_set
+>>> rainbow_colors | favorite_colors
+{'Red', 'Green', 'Violet', 'Blue', 'Purple', 'Gray', 'Orange', 'Yellow'}
+>>> # rainbow_colors & favorite_colors for intersection
+>>> rainbow_colors & favorite_colors 
+{'Blue'}
+>>> # All items in one set but not in the other set
+>>> rainbow_colors ^ favorite_colors
+{'Red', 'Green', 'Violet', 'Purple', 'Gray', 'Orange', 'Yellow'}
+>>>
