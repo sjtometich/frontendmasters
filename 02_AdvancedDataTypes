@@ -366,3 +366,24 @@ False
 >>> rainbow_colors ^ favorite_colors
 {'Red', 'Green', 'Violet', 'Purple', 'Gray', 'Orange', 'Yellow'}
 >>>
+
+#######################################################################
+
+Type: Dictionaries
+# Use:
+  Used for storing data in key, value pairs. Keys used must be immutable data types
+# Creation
+  {} or dict() for an empty dict. {1: "one", 2: "two"} for a dict with items
+# Search Methods
+  key in my_dict()
+# Search Speed
+  Searching for a key in a large dictionary is fast
+# Common Methods
+  my_dict[key] to get the value by key and throw a KeyError if key is not in the dictionary. Use my_dict.get(key) to fall silently if key is not in my_dict. my_dict_items() for all key, value pairs, my_dict.keys() for all keys, and my_dict.values() for all values
+# Order preserved?
+  Sort of. As of Python 3.6 a dict is sorted by insertion order. Items can't be accessed by index, only by key
+# Mutable?
+  Yes. You can add or remove keys from dict's
+# In-place sortable?
+  No. dict's don't have an index, only keys
+
