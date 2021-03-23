@@ -387,3 +387,52 @@ Type: Dictionaries
 # In-place sortable?
   No. dict's don't have an index, only keys
 
+>>> # Dictionaries
+>>> {}
+{}  
+>>> type({}) 
+<class 'dict'>
+>>> dict()
+{}  
+>>> {1: "one"}
+{1: 'one'}
+>>> # the key is on the left followed by a colon. The above is a one key dictionary
+>>> nums = {"one": 1, "two":2, "three":3}
+>>> type(nums)
+<class 'dict'>
+>>> nums
+{'one': 1, 'two': 2, 'three': 3}
+>>> {1:1}
+{1: 1}
+>>> {1: []}
+{1: []}
+>>> {[]: 1}
+Traceback (most recent call last):   
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'   
+>>> # Only immutable types can be used as dictionary keys
+>>> nums
+{'one': 1, 'two': 2, 'three': 3}
+>>> nums["one"]
+1
+>>> # What if I try to access the dictionary by position? I get a key error
+>>> nums[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 0
+>>> nums
+{'one': 1, 'two': 2, 'three': 3}
+>>> nums.get("four")
+>>> nums["four"]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'four'
+>>> nums
+{'one': 1, 'two': 2, 'three': 3}
+>>> nums.get("one")
+1
+>>> nums.get("four") # returns None type
+>>> nums.get("four", "default value")
+'default value'
+>>> nums.get("one", "default value")  
+1
