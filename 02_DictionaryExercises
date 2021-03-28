@@ -1,0 +1,29 @@
+>>> my_dict = {"key" : "value"} 
+>>> my_dict[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 0
+>>> my_dict["hello"] = "world"
+>>> my_dict["foo"] = "bar"
+>>> my_dict
+{'key': 'value', 'hello': 'world', 'foo': 'bar'}
+>>> my_dict["hello"]
+'world'
+>>> my_dict.get("hello") # if I use .get() on a key that is not in my dictionary I will not get an error. If I try to access a key using my_dict[] and it doesn't exist, I will get an error
+'world'
+>>> my_dict["baz"]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'baz'
+>>> my_dict.get("baz")
+>>> my_dict.get("baz", "default")
+'default'
+>>> my_dict.get("foo", "default")
+'bar'
+>>> my_dict.values()
+dict_values(['value', 'world', 'bar'])
+>>> my_dict.keys()
+dict_keys(['key', 'hello', 'foo'])
+>>> my_dict.items()
+dict_items([('key', 'value'), ('hello', 'world'), ('foo', 'bar')])
+>>>  
