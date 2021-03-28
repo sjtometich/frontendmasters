@@ -493,7 +493,3 @@ Mutability:
 # tuple: contain ordered groups of items in an immutable collection. They are NOT mutable
 
 # dictionary: contains key value pairs and IS mutable (you can add or detract key value pairs)
-
-
-
-
