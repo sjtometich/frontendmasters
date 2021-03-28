@@ -1,0 +1,182 @@
+Type: List
+# Use:
+  Used for storing similar items, and in case where items need to be added or removed
+# Creation
+  [] or list() for empty list, or [1,2,3] for a list with items
+# Search Methods
+  my_list.index(item) or item in my_list
+# Search Speed
+  Searching for an item in a large list is slow. Each item must be checked
+# Common Methods
+  len(my_list), append(item) to add, insert(index, item) to insert in the middle, pop() to remove
+# Order preserved?
+  Yes - items can be accessed by index
+# Mutable?
+  Yes
+# In-place sortable?
+  Yes - my_list.sort() or my_list.reverse() will sort the list in-place
+
+
+>>> # Lists
+>>> []
+[]
+>>> list()
+[]
+>>> type ([]) 
+<class 'list'>
+>>> names = ["Sara", "Max", "Rose"]
+>>> type(names)
+<class 'list'>
+>>> names
+['Sara', 'Max', 'Rose']
+>>> print(names)
+['Sara', 'Max', 'Rose']
+>>> "Sara".lower()
+'sara'
+>>> len(names)
+3   
+>>> names[1]
+'Max'
+>>> names[]
+  File "<stdin>", line 1   
+    names[]
+          ^
+SyntaxError: invalid syntax
+>>> names[0] 
+'Sara'
+>>> names[2]
+'Rose'
+>>> names[4]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>> names
+['Sara', 'Max', 'Rose']
+>>> names[1] = "Jimmy"
+>>> names
+['Sara', 'Jimmy', 'Rose']
+>>> names = [
+... "Sara",
+... "Jimmy",
+... "Rose",
+... ]
+>>> names
+['Sara', 'Jimmy', 'Rose']
+>>> [1, 2, 3 4]
+  File "<stdin>", line 1
+    [1, 2, 3 4]
+             ^
+SyntaxError: invalid syntax
+>>> lottery_numbers = [1, 4, 2374, 90, 14, 7]
+>>> # Two ways of sorting in python
+>>> sorted(lottery_numbers)
+[1, 4, 7, 14, 90, 2374]
+>>> lottery_numbers
+[1, 4, 2374, 90, 14, 7]
+>>> sorted(lottery_numbers, reverse =True)
+[2374, 90, 14, 7, 4, 1]
+>>> lottery_numbers
+[1, 4, 2374, 90, 14, 7]
+>>> x = sorted(lottery_numbers)
+>>> x
+[1, 4, 7, 14, 90, 2374]
+>>> # Second way of sorting lists in Python
+>>> # Your data is going to change
+>>> lottery_numbers.sort()
+>>> lottery_numbers
+[1, 4, 7, 14, 90, 2374]
+>>> lottery_numbers.reverse()
+>>> lottery_numbers
+[2374, 90, 14, 7, 4, 1]
+>>> type(lottery_numbers)
+<class 'list'>
+>>> dir(list)
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', 
+'__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> help(list.reverse)
+Help on method_descriptor:
+
+reverse(self, /)
+    Reverse *IN PLACE*.
+
+>>> len(lottery_numbers)
+6
+>>> names = ["Sara", "Alex"]
+>>> names.append("Jimmy")
+>>> names
+['Sara', 'Alex', 'Jimmy']
+>>> len(names)
+3
+>>> # insert into list -- my_list(position, value)
+>>> names.insert(0, "Rose")
+>>> names
+['Rose', 'Sara', 'Alex', 'Jimmy']
+>>> help(list.insert)
+Help on method_descriptor:
+
+insert(self, index, object, /)
+    Insert object before index.
+
+>>> names = ["Sara", "Alex"]
+>>> colors = ["Red", "Blue"]
+>>> names.extend(colors)
+>>> names
+['Sara', 'Alex', 'Red', 'Blue']
+>>> names = ["Sara", "Phil", "Alex", "Sara"]
+>>> # Check to see if a value is present in a list or not
+>>> "Rose" in names
+False
+>>>
+>>> "Sara" in names
+True
+>>> names.index("Phil") 
+1
+>>> names.index("Sara")
+0
+>>> names.count("Phil")
+1
+>>> names.count("Sara")
+2
+>>> names[0]  = "Jimmy" 
+>>> names
+['Jimmy', 'Phil', 'Alex', 'Sara']
+>>> pos = names.index("Phil")
+>>> names[pos] = "Floyd"
+>>> names
+['Jimmy', 'Floyd', 'Alex', 'Sara']
+>>> len(names)
+4
+>>> names[4]= "Paul"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list assignment index out of range
+>>> names = ["Sara", "Alex"] 
+>>> names.remove("Alex")
+>>> names
+['Sara']
+>>> names = ["Sara", "Alex", "Pam", "Alex"]
+>>> names.remove("Alex")
+>>> names
+['Sara', 'Pam', 'Alex']
+>>> names.remove("Jacob")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: list.remove(x): x not in list
+>>> names
+['Sara', 'Pam', 'Alex']
+>>> names.pop()
+'Alex'
+>>> names
+['Sara', 'Pam']
+>>> # pop() removes the last index in the list
+>>> names = ["Sara", "Alex", "Pam"]        
+>>> names.pop(1)
+'Alex'
+>>> names
+['Sara', 'Pam']
+>>> # pop() can also take in an index to remove     
+>>> names
+['Sara', 'Pam']
+>>> len(names)
+2
+>>>
