@@ -1,0 +1,106 @@
+Type: Dictionaries
+# Use:
+  Used for storing data in key, value pairs. Keys used must be immutable data types
+# Creation
+  {} or dict() for an empty dict. {1: "one", 2: "two"} for a dict with items
+# Search Methods
+  key in my_dict()
+# Search Speed
+  Searching for a key in a large dictionary is fast
+# Common Methods
+  my_dict[key] to get the value by key and throw a KeyError if key is not in the dictionary. Use my_dict.get(key) to fall silently if key is not in my_dict. my_dict_items() for all key, value pairs, my_dict.keys() for all keys, and my_dict.values() for all values
+# Order preserved?
+  Sort of. As of Python 3.6 a dict is sorted by insertion order. Items can't be accessed by index, only by key
+# Mutable?
+  Yes. You can add or remove keys from dict's
+# In-place sortable?
+  No. dict's don't have an index, only keys
+
+>>> # Dictionaries
+>>> {}
+{}  
+>>> type({}) 
+<class 'dict'>
+>>> dict()
+{}  
+>>> {1: "one"}
+{1: 'one'}
+>>> # the key is on the left followed by a colon. The above is a one key dictionary
+>>> nums = {"one": 1, "two":2, "three":3}
+>>> type(nums)
+<class 'dict'>
+>>> nums
+{'one': 1, 'two': 2, 'three': 3}
+>>> {1:1}
+{1: 1}
+>>> {1: []}
+{1: []}
+>>> {[]: 1}
+Traceback (most recent call last):   
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'   
+>>> # Only immutable types can be used as dictionary keys
+>>> nums
+{'one': 1, 'two': 2, 'three': 3}
+>>> nums["one"]
+1
+>>> # What if I try to access the dictionary by position? I get a key error
+>>> nums[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 0
+>>> nums
+{'one': 1, 'two': 2, 'three': 3}
+>>> nums.get("four")
+>>> nums["four"]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'four'
+>>> nums
+{'one': 1, 'two': 2, 'three': 3}
+>>> nums.get("one")
+1
+>>> nums.get("four") # returns None type
+>>> nums.get("four", "default value")
+'default value'
+>>> nums.get("one", "default value")  
+1
+>>> nums
+{'one': 1, 'two': 2, 'three': 3}
+>>> nums["four"] = 4
+>>> nums
+{'one': 1, 'two': 2, 'three': 3, 'four': 4}
+>>> nums["two"] = "twwoooo" # we can't have duplicate keys because of hash so it will overwrite the key that was there and discard the old one 
+>>> nums
+{'one': 1, 'two': 'twwoooo', 'three': 3, 'four': 4}
+>>> "one" in nums
+True
+>>> colors = {"r": "Red", "g": "Green"}
+>>> numbers = {1:"One", 2:"Two"} 
+>>> colors
+{'r': 'Red', 'g': 'Green'}
+>>> numbers
+{1: 'One', 2: 'Two'}
+>>> colors.update(numbers)
+>>> colors
+{'r': 'Red', 'g': 'Green', 1: 'One', 2: 'Two'}
+>>> colors = {"Green": ["Spinach"]}                              
+>>> vegetables = colors
+>>> vegetables
+{'Green': ['Spinach']}
+>>> type(vegetables["Green"])
+<class 'list'>
+>>> vegetables["Green"].append("Apples")
+>>> colors
+{'Green': ['Spinach', 'Apples']}
+>>> nums["two"] = 2
+>>> nums
+{'one': 1, 'two': 2, 'three': 3, 'four': 4}
+>>> nums.keys()
+dict_keys(['one', 'two', 'three', 'four'])
+>>> nums.values()
+dict_values([1, 2, 3, 4])
+>>> nums.items()
+dict_items([('one', 1), ('two', 2), ('three', 3), ('four', 4)])
+>>> # .items() grabs a list of tuples  
+>>>
