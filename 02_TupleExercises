@@ -1,0 +1,19 @@
+>>> type((3))
+<class 'int'>
+>>> type((3, ))
+<class 'tuple'>
+>>> my_tuple = 1,
+>>> my_tuple
+(1,)
+>>> my_tuple[1] = 2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> person = ("Jim", 29, "Austin, TX")
+>>> name, age, hometown = person
+>>> name
+'Jim'
+>>> age
+29
+>>> hometown
+'Austin, TX'
