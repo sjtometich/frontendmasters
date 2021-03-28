@@ -436,3 +436,64 @@ KeyError: 'four'
 'default value'
 >>> nums.get("one", "default value")  
 1
+>>> nums
+{'one': 1, 'two': 2, 'three': 3}
+>>> nums["four"] = 4
+>>> nums
+{'one': 1, 'two': 2, 'three': 3, 'four': 4}
+>>> nums["two"] = "twwoooo" # we can't have duplicate keys because of hash so it will overwrite the key that was there and discard the old one 
+>>> nums
+{'one': 1, 'two': 'twwoooo', 'three': 3, 'four': 4}
+>>> "one" in nums
+True
+>>> colors = {"r": "Red", "g": "Green"}
+>>> numbers = {1:"One", 2:"Two"} 
+>>> colors
+{'r': 'Red', 'g': 'Green'}
+>>> numbers
+{1: 'One', 2: 'Two'}
+>>> colors.update(numbers)
+>>> colors
+{'r': 'Red', 'g': 'Green', 1: 'One', 2: 'Two'}
+>>> colors = {"Green": ["Spinach"]}                              
+>>> vegetables = colors
+>>> vegetables
+{'Green': ['Spinach']}
+>>> type(vegetables["Green"])
+<class 'list'>
+>>> vegetables["Green"].append("Apples")
+>>> colors
+{'Green': ['Spinach', 'Apples']}
+>>> nums["two"] = 2
+>>> nums
+{'one': 1, 'two': 2, 'three': 3, 'four': 4}
+>>> nums.keys()
+dict_keys(['one', 'two', 'three', 'four'])
+>>> nums.values()
+dict_values([1, 2, 3, 4])
+>>> nums.items()
+dict_items([('one', 1), ('two', 2), ('three', 3), ('four', 4)])
+>>> # .items() grabs a list of tuples  
+>>>
+
+#######################################################################
+
+Mutability:
+
+# int, float, decimal: these store numbers and are NOT mutable
+
+# str: stores strings and is NOT mutable
+
+# bool: stores True or False and is NOT mutable
+
+# list: ordered group of items, accessible by position and IS mutable
+
+# set: mutable unoordered group consisting only of immutable items. Useful for set operations (membership, intersection, difference, etc.) and IS mutable
+
+# tuple: contain ordered groups of items in an immutable collection. They are NOT mutable
+
+# dictionary: contains key value pairs and IS mutable (you can add or detract key value pairs)
+
+
+
+
